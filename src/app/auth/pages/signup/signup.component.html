@@ -1,0 +1,22 @@
+<section class="log-reg">
+
+  <div class="login-page">
+    <div class="form">
+      <h3 class="form-title">Registration</h3>
+      <form class="login-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="Your username" formControlName="name"/>
+        <input type="password" placeholder="Youre password" formControlName="password"/>
+        <!-- add logic to compare passwords, after dont forget to handle error if passwords is not equals -->
+        <input type="email" placeholder="Your email" formControlName="email"/>
+        <p *ngIf="errors?.name" class="error">{{ errors?.name }}</p>
+        <p *ngIf="errors?.email" class="error">{{ errors?.email }}</p>
+        <p *ngIf="errors?.password" class="error">{{ errors?.password }}</p>
+        <!-- make alert if registration successfull -->
+        <!-- <p class="correct">Success! Check your email for continue registration</p> -->
+        <button type="submit" class="btn btn-block btn-primary">Register User</button>
+        <p class="message">Have an account? <a href="/login">Log in</a></p>
+      </form>
+    </div>
+  </div>
+
+</section>
